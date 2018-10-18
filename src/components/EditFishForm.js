@@ -1,5 +1,6 @@
 import React from 'react';
 import { throws } from 'assert';
+import PropTypes from 'prop-types';
 
 class EditFishForm extends React.Component {
 
@@ -9,6 +10,18 @@ class EditFishForm extends React.Component {
 			[event.currentTarget.name]: event.currentTarget.value
 		};
 		this.props.updateFish(this.props.index, updatedFish);
+	};
+
+	static propTypes = {
+		fish: PropTypes.shape({
+			image: PropTypes.string,
+			name: PropTypes.string,
+			price: PropTypes.number,
+			desc: PropTypes.string,
+			status:PropTypes.string
+		}),
+		index: PropTypes.string,
+		updatedFish: PropTypes.func
 	};
 
 	render() {

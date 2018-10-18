@@ -1,8 +1,12 @@
 import React, { Fragment } from 'react';
 import { getFunName } from '../helpers';
+import PropTypes from 'prop-types';
 
 class StorePicker extends React.Component 
 {	
+	static propTypes = {
+		history: PropTypes.object
+	};
 
 	myInput = React.createRef();
 
@@ -10,7 +14,7 @@ class StorePicker extends React.Component
 		event.preventDefault();
 		const storeName = this.myInput.value.value;
 		this.props.history.push(`/store/${ storeName }`);
-	}
+	};
 
 	render() {
 		return (
