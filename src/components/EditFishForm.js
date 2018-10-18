@@ -1,4 +1,5 @@
 import React from 'react';
+import { throws } from 'assert';
 
 class EditFishForm extends React.Component {
 
@@ -21,6 +22,7 @@ class EditFishForm extends React.Component {
 				</select>
 				<textarea name="desc" onChange={this.handleChange} value={this.props.fish.desc}></textarea>
 				<input name="image" onChange={this.handleChange} type="text" value={this.props.fish.image} />
+				<button onClick={() => this.props.deleteFish(this.props.index)} >Remove fish</button>
 			</div>
 		);
 	}
